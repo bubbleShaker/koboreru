@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b1030">
+<meta name="description" content="大切な人が多すぎると、手から零れ落ちちゃう。それを体験するスマホゲーム。">
+<title>こぼれる</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="game"></canvas>
+
+  <div id="hud" hidden>
+    <div id="progress"><div id="progress-bar"></div></div>
+    <button id="mute" type="button" aria-label="音のオン・オフ">♪</button>
+  </div>
+  <div id="line"></div>
+  <div id="log"></div>
+
+  <section id="title" class="screen">
+    <h1>こぼれる</h1>
+    <p class="quote">大切な人が多すぎるとね<br>手から零れ落ちちゃうの<br>分かるかな</p>
+    <div class="howto">
+      <p><span class="mark">↔</span>画面をなぞって、両手を動かす</p>
+      <p><span class="mark">●</span>手の中の光に触れ続けると、想いが届く</p>
+      <p class="sub">触れているあいだ、手は動かせない</p>
+    </div>
+    <details id="names-box">
+      <summary>あなたの大切な人の名前を入れる（任意）</summary>
+      <div id="names">
+        <input type="text" maxlength="8" placeholder="例：おかあさん" autocomplete="off">
+        <input type="text" maxlength="8" placeholder="例：親友" autocomplete="off">
+        <input type="text" maxlength="8" placeholder="" autocomplete="off">
+        <input type="text" maxlength="8" placeholder="" autocomplete="off">
+        <input type="text" maxlength="8" placeholder="" autocomplete="off">
+      </div>
+      <p class="sub">名前はこの端末の中だけで使われます。</p>
+    </details>
+    <button id="start" class="btn" type="button">両手をひらく</button>
+  </section>
+
+  <section id="end" class="screen" hidden>
+    <p id="verdict"></p>
+    <div id="results"></div>
+    <p class="quote small">大切な人が多すぎるとね<br>手から零れ落ちちゃうの</p>
+    <button id="again" class="btn" type="button">もう一度、両手をひらく</button>
+  </section>
+</div>
+<script src="audio.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
